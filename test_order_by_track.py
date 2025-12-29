@@ -9,7 +9,7 @@ def test_created_order_returns_track():
     resp = stand.create_order(data.order_body)
     body = resp.json()
 
-    assert resp.status_code in (HTTPStatus.OK, HTTPStatus.CREATED)
+    assert resp.status_code == HTTPStatus.CREATED
     assert body.get("track") is not None
 
 
